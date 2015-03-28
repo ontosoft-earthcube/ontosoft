@@ -316,6 +316,18 @@
     
 
 
+    <!-- http://ontosoft.org/software#hasEmailContact -->
+
+    <owl:ObjectProperty rdf:about="&software;hasEmailContact">
+        <category>Discuss</category>
+        <category>Get Support</category>
+        <rdfs:comment>What is the e-mail adddress for this software?</rdfs:comment>
+        <rdfs:domain rdf:resource="&software;Software"/>
+        <rdfs:range rdf:resource="&software;TextEntity"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://ontosoft.org/software#hasExecutableLocation -->
 
     <owl:ObjectProperty rdf:about="&software;hasExecutableLocation">
@@ -625,6 +637,33 @@
     
 
 
+    <!-- http://ontosoft.org/software#hasSoftwareReleaseDate -->
+
+    <owl:ObjectProperty rdf:about="&software;hasSoftwareReleaseDate">
+        <category>Track</category>
+        <dc:description xml:lang="en">When was this version released ?</dc:description>
+        <uiConfig>{position:2}</uiConfig>
+        <category>Update</category>
+        <rdfs:range rdf:resource="&software;DateEntity"/>
+        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <rdfs:subPropertyOf rdf:resource="&terms;date"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontosoft.org/software#hasSoftwareSupport -->
+
+    <owl:ObjectProperty rdf:about="&software;hasSoftwareSupport">
+        <category>Get Support</category>
+        <rdfs:comment>What is the  support for this software</rdfs:comment>
+        <category>Discuss</category>
+        <rdfs:domain rdf:resource="&software;Software"/>
+        <rdfs:range rdf:resource="&software;TextEntity"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://ontosoft.org/software#hasSoftwareVersion -->
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareVersion">
@@ -775,19 +814,6 @@
     
 
 
-    <!-- http://ontosoft.org/software#hasVersionReleaseDate -->
-
-    <owl:ObjectProperty rdf:about="&software;hasVersionReleaseDate">
-        <category>Update</category>
-        <uiConfig>{position:2}</uiConfig>
-        <category>Track</category>
-        <dc:description xml:lang="en">When was this version released ?</dc:description>
-        <rdfs:range rdf:resource="&software;DateEntity"/>
-        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://ontosoft.org/software#hasWorkflowDescription -->
 
     <owl:ObjectProperty rdf:about="&software;hasWorkflowDescription">
@@ -879,6 +905,14 @@
     <owl:ObjectProperty rdf:about="&terms;creator">
         <rdfs:isDefinedBy>http://purl.org/dc/terms/creator</rdfs:isDefinedBy>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/date -->
+
+    <owl:ObjectProperty rdf:about="&terms;date">
+        <rdfs:isDefinedBy>http://purl.org/dc/terms/date</rdfs:isDefinedBy>
     </owl:ObjectProperty>
     
 
