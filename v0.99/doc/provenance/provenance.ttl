@@ -1,0 +1,15 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+<http://ontosoft.org/software_20150312> a prov:Entity;
+	 dc:title "OntoSoft";
+	 prov:wasAttributedTo <http://www.isi.edu/~varunr>;
+	 dc:creator <http://www.isi.edu/~varunr>;
+	 prov:wasAttributedTo <http://www.isi.edu/~gil>;
+	 dc:creator <http://www.isi.edu/~gil>;
+	 prov:wasAttributedTo <http://purl.org/net/dgarijo>;
+	 dc:contributor <http://purl.org/net/dgarijo>;
+	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
+	 prov:specializationOf <http://ontosoft.org/software>;
+	 prov:wasRevisionOf <http://ontosoft.org/software_20150302>;
+	 prov:wasGeneratedAt "12 March 2015".
