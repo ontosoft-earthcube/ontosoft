@@ -283,7 +283,7 @@
         <dc:description xml:lang="en">What other software does the software require to be installed ?</dc:description>
         <uiConfig>{position:4}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
-        <rdfs:range rdf:resource="&software;Software"/>
+        <rdfs:range rdf:resource="&software;SoftwareVersion"/>
     </owl:ObjectProperty>
     
 
@@ -320,8 +320,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasEmailContact">
         <category>Discuss</category>
+        <rdfs:comment>What is the e-mail contact for this software?</rdfs:comment>
         <category>Get Support</category>
-        <rdfs:comment>What is the e-mail adddress for this software?</rdfs:comment>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
     </owl:ObjectProperty>
@@ -411,6 +411,8 @@
         <category>What are the input parameters used for this software?</category>
         <category>Compose</category>
         <category>Do Research</category>
+        <rdfs:domain rdf:resource="&software;Software"/>
+        <rdfs:range rdf:resource="&terms;Parameter"/>
     </owl:ObjectProperty>
     
 
@@ -655,7 +657,7 @@
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareSupport">
         <category>Get Support</category>
-        <rdfs:comment>What is the  support for this software</rdfs:comment>
+        <rdfs:comment>What is the  support for this software?</rdfs:comment>
         <category>Discuss</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
@@ -1309,6 +1311,15 @@
         <rdfs:label xml:lang="en">Workflow Description</rdfs:label>
         <rdfs:subClassOf rdf:resource="&software;TextEntity"/>
         <rdfs:comment xml:lang="en">Describes use of the software with other software in a workflow</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/dc/terms/Parameter -->
+
+    <owl:Class rdf:about="&terms;Parameter">
+        <rdfs:label>Parameter</rdfs:label>
+        <rdfs:comment>Indicates a parameter used by a software</rdfs:comment>
     </owl:Class>
     
 
