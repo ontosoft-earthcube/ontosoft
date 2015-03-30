@@ -95,7 +95,7 @@
     <!-- http://purl.org/dc/terms/contributor -->
 
     <rdf:Description rdf:about="&terms;contributor">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/contributor</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     
 
@@ -103,7 +103,7 @@
     <!-- http://purl.org/dc/terms/creator -->
 
     <rdf:Description rdf:about="&terms;creator">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/creator</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     
 
@@ -111,7 +111,7 @@
     <!-- http://purl.org/dc/terms/license -->
 
     <rdf:Description rdf:about="&terms;license">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/license</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </rdf:Description>
     
 
@@ -223,9 +223,9 @@
 
     <owl:ObjectProperty rdf:about="&software;hasCommitmentOfSupport">
         <uiConfig>{position:2}</uiConfig>
-        <category>Discuss</category>
         <dc:description xml:lang="en">How can a user get support for the software ? (eg. Report bugs, request features and extensions, etc)</dc:description>
-        <category>Update</category>
+        <category>Trust</category>
+        <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
     </owl:ObjectProperty>
@@ -264,12 +264,12 @@
     <owl:ObjectProperty rdf:about="&software;hasCreator">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <category>Understand</category>
-        <dc:description xml:lang="en">Who created this software ?</dc:description>
+        <dc:description xml:lang="en">Who created this software? (Project, Organization, Person, Initiative, etc.)</dc:description>
         <uiConfig>{position:1}</uiConfig>
         <category>Trust</category>
-        <rdfs:range rdf:resource="&software;Person"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:subPropertyOf rdf:resource="&terms;creator"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
     </owl:ObjectProperty>
     
 
@@ -395,8 +395,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasInput">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
+        <category>Experiment</category>
         <uiConfig>{position:1}</uiConfig>
-        <category>Compose</category>
         <category>Do Research</category>
         <dc:description xml:lang="en">What input files does the software require ?</dc:description>
         <rdfs:range rdf:resource="&software;FileIO"/>
@@ -409,8 +409,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasInputParameter">
         <category>What are the input parameters used for this software?</category>
-        <category>Compose</category>
         <category>Do Research</category>
+        <category>Experiment</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&terms;Parameter"/>
     </owl:ObjectProperty>
@@ -427,6 +427,18 @@
         <dc:description xml:lang="en">How can one install the software ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontosoft.org/software#hasInteroperableSoftware -->
+
+    <owl:ObjectProperty rdf:about="&software;hasInteroperableSoftware">
+        <category>Do Research</category>
+        <category>Compose</category>
+        <rdfs:comment>What other software can interoperate with this one?</rdfs:comment>
+        <rdfs:domain rdf:resource="&software;Software"/>
+        <rdfs:range rdf:resource="&software;SoftwareDescription"/>
     </owl:ObjectProperty>
     
 
@@ -454,9 +466,9 @@
         <dc:description xml:lang="en">Are there any major contributors of note for this software ?</dc:description>
         <category>Trust</category>
         <category>Understand</category>
-        <rdfs:range rdf:resource="&software;Person"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
     </owl:ObjectProperty>
     
 
@@ -467,8 +479,8 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position: 1}</uiConfig>
-        <category>Access</category>
-        <category>Execute</category>
+        <category>Identify</category>
+        <category>Locate</category>
         <dc:description xml:lang="en">What is the software called ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
@@ -494,7 +506,7 @@
 
     <owl:ObjectProperty rdf:about="&software;hasOutput">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Compose</category>
+        <category>Experiment</category>
         <category>Do Research</category>
         <uiConfig>{position:2}</uiConfig>
         <dc:description xml:lang="en">What output files does the software produce ?</dc:description>
@@ -536,10 +548,10 @@
 
     <owl:ObjectProperty rdf:about="&software;hasProjectWebsite">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <category>Understand</category>
+        <category>Relate</category>
         <dc:description xml:lang="en">Is there a project website for the software ?</dc:description>
         <uiConfig>{position: 6}</uiConfig>
-        <category>Access</category>
-        <category>Execute</category>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;Software"/>
     </owl:ObjectProperty>
@@ -553,7 +565,7 @@
         <category>Trust</category>
         <rdfs:comment>Who is the publisher of this software?</rdfs:comment>
         <rdfs:domain rdf:resource="&software;Software"/>
-        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
     </owl:ObjectProperty>
     
 
@@ -601,8 +613,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasShortDescription">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Access</category>
-        <category>Execute</category>
+        <category>Locate</category>
+        <category>Identify</category>
         <dc:description xml:lang="en">Would you like to provide a short description for this software ?</dc:description>
         <uiConfig>{position: 5}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
@@ -639,20 +651,6 @@
     
 
 
-    <!-- http://ontosoft.org/software#hasSoftwareReleaseDate -->
-
-    <owl:ObjectProperty rdf:about="&software;hasSoftwareReleaseDate">
-        <category>Track</category>
-        <dc:description xml:lang="en">When was this version released ?</dc:description>
-        <uiConfig>{position:2}</uiConfig>
-        <category>Update</category>
-        <rdfs:range rdf:resource="&software;DateEntity"/>
-        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
-        <rdfs:subPropertyOf rdf:resource="&terms;date"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://ontosoft.org/software#hasSoftwareSupport -->
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareSupport">
@@ -661,7 +659,6 @@
         <category>Discuss</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
 
@@ -738,10 +735,10 @@
     <!-- http://ontosoft.org/software#hasUniqueId -->
 
     <owl:ObjectProperty rdf:about="&software;hasUniqueId">
-        <category>Cite</category>
         <dc:description xml:lang="en">What is the DOI or any other unique identifier for this software (or software version) ?</dc:description>
         <uiConfig>{position:1}</uiConfig>
-        <category>Do Research</category>
+        <category>Identify</category>
+        <category>Locate</category>
         <rdfs:range rdf:resource="&software;Identifier"/>
         <rdfs:domain rdf:resource="&software;Software"/>
     </owl:ObjectProperty>
@@ -761,19 +758,6 @@
     
 
 
-    <!-- http://ontosoft.org/software#hasUsageStatistics -->
-
-    <owl:ObjectProperty rdf:about="&software;hasUsageStatistics">
-        <dc:description xml:lang="en">Is there any information about software use (downloads, frequency of run, etc) ?</dc:description>
-        <category>Trust</category>
-        <category>Understand</category>
-        <uiConfig>{position:5}</uiConfig>
-        <rdfs:domain rdf:resource="&software;Software"/>
-        <rdfs:range rdf:resource="&software;UsageStatistics"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://ontosoft.org/software#hasUseLimitations -->
 
     <owl:ObjectProperty rdf:about="&software;hasUseLimitations">
@@ -784,6 +768,19 @@
         <category>Relate</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;UseLimitations"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontosoft.org/software#hasUseStatistics -->
+
+    <owl:ObjectProperty rdf:about="&software;hasUseStatistics">
+        <dc:description xml:lang="en">Is there any information about software use (downloads, frequency of run, etc) ?</dc:description>
+        <category>Understand</category>
+        <category>Trust</category>
+        <uiConfig>{position:5}</uiConfig>
+        <rdfs:domain rdf:resource="&software;Software"/>
+        <rdfs:range rdf:resource="&software;UsageStatistics"/>
     </owl:ObjectProperty>
     
 
@@ -812,6 +809,20 @@
         <dc:description xml:lang="en">What is the software version id ?</dc:description>
         <rdfs:range rdf:resource="&software;Identifier"/>
         <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontosoft.org/software#hasVersionReleaseDate -->
+
+    <owl:ObjectProperty rdf:about="&software;hasVersionReleaseDate">
+        <category>Update</category>
+        <uiConfig>{position:2}</uiConfig>
+        <category>Track</category>
+        <dc:description xml:lang="en">When was this version released ?</dc:description>
+        <rdfs:range rdf:resource="&software;DateEntity"/>
+        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <rdfs:subPropertyOf rdf:resource="&terms;date"/>
     </owl:ObjectProperty>
     
 
@@ -856,14 +867,27 @@
     
 
 
-    <!-- http://ontosoft.org/software#supersedesVersion -->
+    <!-- http://ontosoft.org/software#supersededBy -->
 
-    <owl:ObjectProperty rdf:about="&software;supersedesVersion">
-        <category>Track</category>
+    <owl:ObjectProperty rdf:about="&software;supersededBy">
         <category>Update</category>
-        <dc:description xml:lang="en">What version does this software version supersede ?</dc:description>
-        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <category>Track</category>
+        <category>Which versions replace  the current version?</category>
         <rdfs:range rdf:resource="&software;SoftwareVersion"/>
+        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <owl:inverseOf rdf:resource="&software;supersedes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://ontosoft.org/software#supersedes -->
+
+    <owl:ObjectProperty rdf:about="&software;supersedes">
+        <category>Update</category>
+        <category>Track</category>
+        <dc:description xml:lang="en">What version does this software version supersede ?</dc:description>
+        <rdfs:range rdf:resource="&software;SoftwareVersion"/>
+        <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
     </owl:ObjectProperty>
     
 
@@ -897,7 +921,7 @@
     <!-- http://purl.org/dc/terms/contributor -->
 
     <owl:ObjectProperty rdf:about="&terms;contributor">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/contributor</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
     
 
@@ -905,7 +929,7 @@
     <!-- http://purl.org/dc/terms/creator -->
 
     <owl:ObjectProperty rdf:about="&terms;creator">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/creator</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
     
@@ -914,7 +938,7 @@
     <!-- http://purl.org/dc/terms/date -->
 
     <owl:ObjectProperty rdf:about="&terms;date">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/date</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
     
 
@@ -922,7 +946,7 @@
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:ObjectProperty rdf:about="&terms;license">
-        <rdfs:isDefinedBy>http://purl.org/dc/terms/license</rdfs:isDefinedBy>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
     </owl:ObjectProperty>
     
 
@@ -1164,6 +1188,7 @@
     <owl:Class rdf:about="&software;Person">
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:comment xml:lang="en">A Person identifier class</rdfs:comment>
     </owl:Class>
     
@@ -1326,13 +1351,17 @@
 
     <!-- http://www.w3.org/ns/prov#Agent -->
 
-    <owl:Class rdf:about="&prov;Agent"/>
+    <owl:Class rdf:about="&prov;Agent">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
+    </owl:Class>
     
 
 
     <!-- http://www.w3.org/ns/prov#Entity -->
 
-    <owl:Class rdf:about="&prov;Entity"/>
+    <owl:Class rdf:about="&prov;Entity">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
+    </owl:Class>
     
 
 
@@ -1553,6 +1582,24 @@
     <owl:NamedIndividual rdf:about="&software;Rscript">
         <rdf:type rdf:resource="&software;ProgrammingLanguage"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/dc/terms/ -->
+
+    <owl:Thing rdf:about="http://purl.org/dc/terms/">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:comment>The Dublin Core terms are commonly used by the community to describe basic attribution metadata</rdfs:comment>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.w3.org/ns/prov# -->
+
+    <owl:Thing rdf:about="http://www.w3.org/ns/prov#">
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:comment>PROV is the W3C standard for provenance.</rdfs:comment>
+    </owl:Thing>
 </rdf:RDF>
 
 
