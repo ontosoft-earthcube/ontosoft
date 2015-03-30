@@ -28,10 +28,10 @@
     <owl:Ontology rdf:about="http://ontosoft.org/software">
         <owl:versionInfo rdf:datatype="&xsd;decimal">1.0</owl:versionInfo>
         <terms:created rdf:datatype="&xsd;date">2015-03-12</terms:created>
-        <terms:modified rdf:datatype="&xsd;date">2015-03-28</terms:modified>
         <terms:contributor rdf:datatype="&xsd;anyURI">http://delicias.dia.fi.upm.es/members/DGarijo#me</terms:contributor>
         <terms:creator rdf:datatype="&xsd;anyURI">http://www.isi.edu/~gil/</terms:creator>
         <terms:creator rdf:datatype="&xsd;anyURI">http://www.isi.edu/~varunr/</terms:creator>
+        <terms:modified>2015-03-30</terms:modified>
         <rdfs:comment xml:lang="en">Ontosoft is an ontology to describe software</rdfs:comment>
         <terms:description xml:lang="en">Ontosoft is an ontology to describe software.</terms:description>
         <vann:preferredNamespaceUri>http://ontosoft.org/software#</vann:preferredNamespaceUri>
@@ -148,7 +148,7 @@
         <rdfs:comment>Has the software been adopted in a project, organization or by a person?</rdfs:comment>
         <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
-        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
     
 
@@ -269,7 +269,7 @@
         <category>Trust</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:subPropertyOf rdf:resource="&terms;creator"/>
-        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
     
 
@@ -468,7 +468,7 @@
         <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
-        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
     
 
@@ -565,7 +565,7 @@
         <category>Trust</category>
         <rdfs:comment>Who is the publisher of this software?</rdfs:comment>
         <rdfs:domain rdf:resource="&software;Software"/>
-        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
     
 
@@ -1188,7 +1188,6 @@
     <owl:Class rdf:about="&software;Person">
         <rdfs:label xml:lang="en">Person</rdfs:label>
         <rdfs:subClassOf rdf:resource="&prov;Agent"/>
-        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
         <rdfs:comment xml:lang="en">A Person identifier class</rdfs:comment>
     </owl:Class>
     

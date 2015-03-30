@@ -4,6 +4,11 @@ This section provides details for each class and property defined by OntoSoft.
    <h2>Classes</h2>
    <ul class="hlist">
       <li>
+         <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">
+            <span>agent</span>
+         </a>
+      </li>
+      <li>
          <a href="#BenchmarkInformation"
             title="http://ontosoft.org/software#BenchmarkInformation">Benchmark Information</a>
       </li>
@@ -26,6 +31,11 @@ This section provides details for each class and property defined by OntoSoft.
       <li>
          <a href="#DevelopmentInformation"
             title="http://ontosoft.org/software#DevelopmentInformation">Development Information</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">
+            <span>entity</span>
+         </a>
       </li>
       <li>
          <a href="#FileIO" title="http://ontosoft.org/software#FileIO">File I/O</a>
@@ -82,7 +92,7 @@ This section provides details for each class and property defined by OntoSoft.
          <a href="#SoftwareCategory" title="http://ontosoft.org/software#SoftwareCategory">SoftwareCategory</a>
       </li>
       <li>
-         <a href="#hasBenchmarkInformation0" title="http://ontosoft.org/software#TestData">Test Data</a>
+         <a href="#TestData" title="http://ontosoft.org/software#TestData">Test Data</a>
       </li>
       <li>
          <a href="#TestInstructions" title="http://ontosoft.org/software#TestInstructions">Test Instructions</a>
@@ -111,6 +121,35 @@ This section provides details for each class and property defined by OntoSoft.
             title="http://ontosoft.org/software#WorkflowDescription">Workflow Description</a>
       </li>
    </ul>
+   <div class="entity" id="http://www.w3.org/ns/prov#Agent">
+      <h3>agent<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Agent</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/prov#">http://www.w3.org/ns/prov#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Person" title="http://ontosoft.org/software#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasAdopter" title="http://ontosoft.org/software#hasAdopter">has adopter</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasCreator" title="http://ontosoft.org/software#hasCreator">has creator</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasMajorContributor" title="http://ontosoft.org/software#hasMajorContributor">has major contributor</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPublisher" title="http://ontosoft.org/software#hasPublisher">has publisher</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="BenchmarkInformation">
       <h3>Benchmark Information<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -245,7 +284,7 @@ This section provides details for each class and property defined by OntoSoft.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -255,8 +294,8 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasSoftwareReleaseDate"
-               title="http://ontosoft.org/software#hasSoftwareReleaseDate">has software release date</a>
+            <a href="#hasVersionReleaseDate"
+               title="http://ontosoft.org/software#hasVersionReleaseDate">has version release date</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -285,6 +324,30 @@ This section provides details for each class and property defined by OntoSoft.
             <a href="#hasActiveDevelopment"
                title="http://ontosoft.org/software#hasActiveDevelopment">has active development</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#Entity">
+      <h3>entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Entity</p>
+      <dl class="definedBy">
+         <dt>is defined by</dt>
+         <dd>
+            <a href="http://www.w3.org/ns/prov#">http://www.w3.org/ns/prov#</a>
+         </dd>
+      </dl>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#DateEntity" title="http://ontosoft.org/software#DateEntity">Date Entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Location" title="http://ontosoft.org/software#Location">Location</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#NumericEntity" title="http://ontosoft.org/software#NumericEntity">Numeric Entity</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#TextEntity" title="http://ontosoft.org/software#TextEntity">Text Entity</a>
+            <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
    </div>
@@ -332,7 +395,7 @@ This section provides details for each class and property defined by OntoSoft.
          <dt>is in range of</dt>
          <dd>
             <a href="#hasFileId" title="http://ontosoft.org/software#hasFileId">has file id</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#uiConfig7" title="http://ontosoft.org/software#hasPersonIdentifier">has person identifier</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPersonIdentifier" title="http://ontosoft.org/software#hasPersonIdentifier">has person identifier</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasUniqueId" title="http://ontosoft.org/software#hasUniqueId">has unique id</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasVersionId" title="http://ontosoft.org/software#hasVersionId">has version id</a>
             <sup class="type-op" title="object property">op</sup>
@@ -409,7 +472,7 @@ This section provides details for each class and property defined by OntoSoft.
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#BSD" title="http://ontosoft.org/software#BSD">BSD</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#CDDL" title="http://ontosoft.org/software#CDDL">CDDL</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#CreativeCommons" title="http://ontosoft.org/software#CreativeCommons">Creative Commons</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#hasCitationLocation2" title="http://ontosoft.org/software#EPL">EPL</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#EPL" title="http://ontosoft.org/software#EPL">EPL</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#GFDL" title="http://ontosoft.org/software#GFDL">GFDL</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#GPLv2" title="http://ontosoft.org/software#GPLv2">GPLv2</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#GPLv3" title="http://ontosoft.org/software#GPLv3">GPLv3</a>
@@ -434,7 +497,7 @@ This section provides details for each class and property defined by OntoSoft.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -499,7 +562,7 @@ This section provides details for each class and property defined by OntoSoft.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -564,18 +627,12 @@ This section provides details for each class and property defined by OntoSoft.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+            <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">agent</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#uiConfig7" title="http://ontosoft.org/software#hasPersonIdentifier">has person identifier</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasCreator" title="http://ontosoft.org/software#hasCreator">has creator</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasMajorContributor" title="http://ontosoft.org/software#hasMajorContributor">has major contributor</a>
+            <a href="#hasPersonIdentifier" title="http://ontosoft.org/software#hasPersonIdentifier">has person identifier</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -607,8 +664,8 @@ This section provides details for each class and property defined by OntoSoft.
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#Java" title="http://ontosoft.org/software#Java">java</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#Javascript" title="http://ontosoft.org/software#Javascript">javascript</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#Matlab" title="http://ontosoft.org/software#Matlab">matlab</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Perl" title="http://ontosoft.org/software#Perl">perl</a>
-            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Python" title="http://ontosoft.org/software#Python">python</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#hasCitationText0" title="http://ontosoft.org/software#Perl">perl</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#hasCitationText8" title="http://ontosoft.org/software#Python">python</a>
             <sup class="type-ni" title="named individual">ni</sup>, <a href="#Rscript" title="http://ontosoft.org/software#Rscript">rscript</a>
             <sup class="type-ni" title="named individual">ni</sup>
          </dd>
@@ -680,6 +737,8 @@ This section provides details for each class and property defined by OntoSoft.
             <sup class="type-op" title="object property">op</sup>, <a href="#hasInputParameter" title="http://ontosoft.org/software#hasInputParameter">has input parameter</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasInstallationInstructions"
                title="http://ontosoft.org/software#hasInstallationInstructions">has installation instructions</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasInteroperableSoftware"
+               title="http://ontosoft.org/software#hasInteroperableSoftware">has interoperable software</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasLicense" title="http://ontosoft.org/software#hasLicense">has license</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasMajorContributor" title="http://ontosoft.org/software#hasMajorContributor">has major contributor</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasName" title="http://ontosoft.org/software#hasName">has name</a>
@@ -701,13 +760,13 @@ This section provides details for each class and property defined by OntoSoft.
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSoftwareSupport" title="http://ontosoft.org/software#hasSoftwareSupport">has software support</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSoftwareVersion" title="http://ontosoft.org/software#hasSoftwareVersion">has software version</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasTestData" title="http://ontosoft.org/software#hasTestData">has test data</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasTestInstructions"
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasActiveDevelopment0"
                title="http://ontosoft.org/software#hasTestInstructions">has test instructions</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasUniqueId" title="http://ontosoft.org/software#hasUniqueId">has unique id</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasUsageInformation"
                title="http://ontosoft.org/software#hasUsageInformation">has usage information</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasUsageStatistics" title="http://ontosoft.org/software#hasUsageStatistics">has usage statistics</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasUseLimitations" title="http://ontosoft.org/software#hasUseLimitations">has use limitations</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasUseStatistics" title="http://ontosoft.org/software#hasUseStatistics">has use statistics</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasUsesAndAssumptions"
                title="http://ontosoft.org/software#hasUsesAndAssumptions">has uses and assumptions</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#requiresAverageMemory"
@@ -740,6 +799,8 @@ This section provides details for each class and property defined by OntoSoft.
          <dd>
             <a href="#hasCompatibleSoftware"
                title="http://ontosoft.org/software#hasCompatibleSoftware">has compatible software</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasInteroperableSoftware"
+               title="http://ontosoft.org/software#hasInteroperableSoftware">has interoperable software</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#similarSoftware" title="http://ontosoft.org/software#similarSoftware">similar software</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -763,17 +824,19 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
          <dt>is in domain of</dt>
          <dd>
-            <a href="#hasSoftwareReleaseDate"
-               title="http://ontosoft.org/software#hasSoftwareReleaseDate">has software release date</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasVersionId" title="http://ontosoft.org/software#hasVersionId">has version id</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#supersedesVersion" title="http://ontosoft.org/software#supersedesVersion">supersedes version</a>
+            <a href="#hasVersionId" title="http://ontosoft.org/software#hasVersionId">has version id</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasVersionReleaseDate"
+               title="http://ontosoft.org/software#hasVersionReleaseDate">has version release date</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#supersededBy" title="http://ontosoft.org/software#supersededBy">superseded by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#supersedes" title="http://ontosoft.org/software#supersedes">supersedes</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasDependency" title="http://ontosoft.org/software#hasDependency">has dependency</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSoftwareVersion" title="http://ontosoft.org/software#hasSoftwareVersion">has software version</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#supersedesVersion" title="http://ontosoft.org/software#supersedesVersion">supersedes version</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#supersededBy" title="http://ontosoft.org/software#supersededBy">superseded by</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#supersedes" title="http://ontosoft.org/software#supersedes">supersedes</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -796,7 +859,7 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="hasBenchmarkInformation0">
+   <div class="entity" id="TestData">
       <h3>Test Data<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
@@ -840,7 +903,7 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasTestInstructions"
+            <a href="#hasActiveDevelopment0"
                title="http://ontosoft.org/software#hasTestInstructions">has test instructions</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
@@ -883,7 +946,7 @@ This section provides details for each class and property defined by OntoSoft.
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+            <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">entity</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>has sub-classes</dt>
@@ -979,7 +1042,7 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#hasUsageStatistics" title="http://ontosoft.org/software#hasUsageStatistics">has usage statistics</a>
+            <a href="#hasUseStatistics" title="http://ontosoft.org/software#hasUseStatistics">has use statistics</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -1197,6 +1260,12 @@ This section provides details for each class and property defined by OntoSoft.
          </a>
       </li>
       <li>
+         <a href="#hasInteroperableSoftware"
+            title="http://ontosoft.org/software#hasInteroperableSoftware">
+            <span>has interoperable software</span>
+         </a>
+      </li>
+      <li>
          <a href="#hasLicense" title="http://ontosoft.org/software#hasLicense">
             <span>has license</span>
          </a>
@@ -1223,7 +1292,7 @@ This section provides details for each class and property defined by OntoSoft.
          </a>
       </li>
       <li>
-         <a href="#uiConfig7" title="http://ontosoft.org/software#hasPersonIdentifier">
+         <a href="#hasPersonIdentifier" title="http://ontosoft.org/software#hasPersonIdentifier">
             <span>has person identifier</span>
          </a>
       </li>
@@ -1276,12 +1345,6 @@ This section provides details for each class and property defined by OntoSoft.
          </a>
       </li>
       <li>
-         <a href="#hasSoftwareReleaseDate"
-            title="http://ontosoft.org/software#hasSoftwareReleaseDate">
-            <span>has software release date</span>
-         </a>
-      </li>
-      <li>
          <a href="#hasSoftwareSupport" title="http://ontosoft.org/software#hasSoftwareSupport">
             <span>has software support</span>
          </a>
@@ -1309,7 +1372,7 @@ This section provides details for each class and property defined by OntoSoft.
          </a>
       </li>
       <li>
-         <a href="#hasTestInstructions"
+         <a href="#hasActiveDevelopment0"
             title="http://ontosoft.org/software#hasTestInstructions">
             <span>has test instructions</span>
          </a>
@@ -1326,13 +1389,13 @@ This section provides details for each class and property defined by OntoSoft.
          </a>
       </li>
       <li>
-         <a href="#hasUsageStatistics" title="http://ontosoft.org/software#hasUsageStatistics">
-            <span>has usage statistics</span>
+         <a href="#hasUseLimitations" title="http://ontosoft.org/software#hasUseLimitations">
+            <span>has use limitations</span>
          </a>
       </li>
       <li>
-         <a href="#hasUseLimitations" title="http://ontosoft.org/software#hasUseLimitations">
-            <span>has use limitations</span>
+         <a href="#hasUseStatistics" title="http://ontosoft.org/software#hasUseStatistics">
+            <span>has use statistics</span>
          </a>
       </li>
       <li>
@@ -1344,6 +1407,12 @@ This section provides details for each class and property defined by OntoSoft.
       <li>
          <a href="#hasVersionId" title="http://ontosoft.org/software#hasVersionId">
             <span>has version id</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasVersionReleaseDate"
+            title="http://ontosoft.org/software#hasVersionReleaseDate">
+            <span>has version release date</span>
          </a>
       </li>
       <li>
@@ -1369,8 +1438,13 @@ This section provides details for each class and property defined by OntoSoft.
          </a>
       </li>
       <li>
-         <a href="#supersedesVersion" title="http://ontosoft.org/software#supersedesVersion">
-            <span>supersedes version</span>
+         <a href="#supersededBy" title="http://ontosoft.org/software#supersededBy">
+            <span>superseded by</span>
+         </a>
+      </li>
+      <li>
+         <a href="#supersedes" title="http://ontosoft.org/software#supersedes">
+            <span>supersedes</span>
          </a>
       </li>
       <li>
@@ -1394,7 +1468,9 @@ This section provides details for each class and property defined by OntoSoft.
          <strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
       <dl class="definedBy">
          <dt>is defined by</dt>
-         <dd>http://ontosoft.org/software#</dd>
+         <dd>
+            <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+         </dd>
       </dl>
       <div class="description">
          <dl>
@@ -1415,7 +1491,9 @@ This section provides details for each class and property defined by OntoSoft.
          <strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
       <dl class="definedBy">
          <dt>is defined by</dt>
-         <dd>http://ontosoft.org/software#</dd>
+         <dd>
+            <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+         </dd>
       </dl>
       <div class="description">
          <dl>
@@ -1440,14 +1518,16 @@ This section provides details for each class and property defined by OntoSoft.
          <strong>IRI:</strong> http://purl.org/dc/terms/date</p>
       <dl class="definedBy">
          <dt>is defined by</dt>
-         <dd>http://ontosoft.org/software#</dd>
+         <dd>
+            <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+         </dd>
       </dl>
       <div class="description">
          <dl>
             <dt>has sub-properties</dt>
             <dd>
-               <a href="#hasSoftwareReleaseDate"
-                  title="http://ontosoft.org/software#hasSoftwareReleaseDate">has software release date</a>
+               <a href="#hasVersionReleaseDate"
+                  title="http://ontosoft.org/software#hasVersionReleaseDate">has version release date</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -1498,7 +1578,7 @@ This section provides details for each class and property defined by OntoSoft.
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/ns/prov#Entity">entity</span>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">agent</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1733,13 +1813,13 @@ This section provides details for each class and property defined by OntoSoft.
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Person" title="http://ontosoft.org/software#Person">Person</a>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">agent</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
       </div>
       <div class="info">
-         <p>Who created this software ?</p>
+         <p>Who created this software? (Project, Organization, Person, Initiative, etc.)</p>
       </div>
    </div>
    <div class="entity" id="hasDependency">
@@ -2042,6 +2122,32 @@ This section provides details for each class and property defined by OntoSoft.
          <p>How can one install the software ?</p>
       </div>
    </div>
+   <div class="entity" id="hasInteroperableSoftware">
+      <h3>has interoperable software<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontosoft.org/software#hasInteroperableSoftware</p>
+      <div class="comment">
+         <p>What other software can interoperate with this one?</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Software" title="http://ontosoft.org/software#Software">Software</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#SoftwareDescription"
+                  title="http://ontosoft.org/software#SoftwareDescription">Software Description</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasLicense">
       <h3>has license<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2093,7 +2199,7 @@ This section provides details for each class and property defined by OntoSoft.
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#Person" title="http://ontosoft.org/software#Person">Person</a>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">agent</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2182,7 +2288,7 @@ This section provides details for each class and property defined by OntoSoft.
          <p>What output files does the software produce ?</p>
       </div>
    </div>
-   <div class="entity" id="uiConfig7">
+   <div class="entity" id="hasPersonIdentifier">
       <h3>has person identifier<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
@@ -2280,7 +2386,7 @@ This section provides details for each class and property defined by OntoSoft.
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span>
+               <a href="#http://www.w3.org/ns/prov#Agent" title="http://www.w3.org/ns/prov#Agent">agent</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2436,36 +2542,6 @@ This section provides details for each class and property defined by OntoSoft.
          <p>Is there any on-line resource for accessing the software community ? (eg. Mailing-list, discussion board, wiki, etc)</p>
       </div>
    </div>
-   <div class="entity" id="hasSoftwareReleaseDate">
-      <h3>has software release date<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://ontosoft.org/software#hasSoftwareReleaseDate</p>
-      <div class="description">
-         <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <a href="#http://purl.org/dc/terms/date" title="http://purl.org/dc/terms/date">date</a>
-               <sup class="type-op" title="object property">op</sup>
-            </dd>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#SoftwareVersion" title="http://ontosoft.org/software#SoftwareVersion">Software Version</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#DateEntity" title="http://ontosoft.org/software#DateEntity">Date Entity</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-      <div class="info">
-         <p>When was this version released ?</p>
-      </div>
-   </div>
    <div class="entity" id="hasSoftwareSupport">
       <h3>has software support<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2478,10 +2554,6 @@ This section provides details for each class and property defined by OntoSoft.
       </div>
       <div class="description">
          <dl>
-            <dt>has super-properties</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2002/07/owl#topObjectProperty">top object property</span>
-            </dd>
             <dt>has domain</dt>
             <dd>
                <a href="#Software" title="http://ontosoft.org/software#Software">Software</a>
@@ -2536,7 +2608,7 @@ This section provides details for each class and property defined by OntoSoft.
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#hasBenchmarkInformation0" title="http://ontosoft.org/software#TestData">Test Data</a>
+               <a href="#TestData" title="http://ontosoft.org/software#TestData">Test Data</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -2558,7 +2630,7 @@ This section provides details for each class and property defined by OntoSoft.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#hasBenchmarkInformation0" title="http://ontosoft.org/software#TestData">Test Data</a>
+               <a href="#TestData" title="http://ontosoft.org/software#TestData">Test Data</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2586,7 +2658,7 @@ This section provides details for each class and property defined by OntoSoft.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#hasBenchmarkInformation0" title="http://ontosoft.org/software#TestData">Test Data</a>
+               <a href="#TestData" title="http://ontosoft.org/software#TestData">Test Data</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -2600,7 +2672,7 @@ This section provides details for each class and property defined by OntoSoft.
          <p>What is the URL for test data ?</p>
       </div>
    </div>
-   <div class="entity" id="hasTestInstructions">
+   <div class="entity" id="hasActiveDevelopment0">
       <h3>has test instructions<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
@@ -2677,31 +2749,6 @@ This section provides details for each class and property defined by OntoSoft.
          <p>Is there any information about uses of this software (paper dois, research labs, etc) ?</p>
       </div>
    </div>
-   <div class="entity" id="hasUsageStatistics">
-      <h3>has usage statistics<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://ontosoft.org/software#hasUsageStatistics</p>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#Software" title="http://ontosoft.org/software#Software">Software</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <a href="#UsageStatistics" title="http://ontosoft.org/software#UsageStatistics">Usage Statistics</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-      <div class="info">
-         <p>Is there any information about software use (downloads, frequency of run, etc) ?</p>
-      </div>
-   </div>
    <div class="entity" id="hasUseLimitations">
       <h3>has use limitations<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2725,6 +2772,31 @@ This section provides details for each class and property defined by OntoSoft.
       </div>
       <div class="info">
          <p>Are there any constraints on use, situations it is not designed for, simplifications ?</p>
+      </div>
+   </div>
+   <div class="entity" id="hasUseStatistics">
+      <h3>has use statistics<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontosoft.org/software#hasUseStatistics</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Software" title="http://ontosoft.org/software#Software">Software</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#UsageStatistics" title="http://ontosoft.org/software#UsageStatistics">Usage Statistics</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+      <div class="info">
+         <p>Is there any information about software use (downloads, frequency of run, etc) ?</p>
       </div>
    </div>
    <div class="entity" id="hasUsesAndAssumptions">
@@ -2779,6 +2851,36 @@ This section provides details for each class and property defined by OntoSoft.
          <p>What is the software version id ?</p>
       </div>
    </div>
+   <div class="entity" id="hasVersionReleaseDate">
+      <h3>has version release date<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontosoft.org/software#hasVersionReleaseDate</p>
+      <div class="description">
+         <dl>
+            <dt>has super-properties</dt>
+            <dd>
+               <a href="#http://purl.org/dc/terms/date" title="http://purl.org/dc/terms/date">date</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#SoftwareVersion" title="http://ontosoft.org/software#SoftwareVersion">Software Version</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#DateEntity" title="http://ontosoft.org/software#DateEntity">Date Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+      <div class="info">
+         <p>When was this version released ?</p>
+      </div>
+   </div>
    <div class="entity" id="hasWorkflowDescription">
       <h3>has workflow description<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -2816,7 +2918,9 @@ This section provides details for each class and property defined by OntoSoft.
          <strong>IRI:</strong> http://purl.org/dc/terms/license</p>
       <dl class="definedBy">
          <dt>is defined by</dt>
-         <dd>http://ontosoft.org/software#</dd>
+         <dd>
+            <a href="http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+         </dd>
       </dl>
       <div class="description">
          <dl>
@@ -2881,13 +2985,13 @@ This section provides details for each class and property defined by OntoSoft.
          <p>Is there any other similar software that you know of ?</p>
       </div>
    </div>
-   <div class="entity" id="supersedesVersion">
-      <h3>supersedes version<sup class="type-op" title="object property">op</sup>
+   <div class="entity" id="supersededBy">
+      <h3>superseded by<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> http://ontosoft.org/software#supersedesVersion</p>
+         <strong>IRI:</strong> http://ontosoft.org/software#supersededBy</p>
       <div class="description">
          <dl>
             <dt>has domain</dt>
@@ -2899,6 +3003,38 @@ This section provides details for each class and property defined by OntoSoft.
             <dd>
                <a href="#SoftwareVersion" title="http://ontosoft.org/software#SoftwareVersion">Software Version</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#supersedes" title="http://ontosoft.org/software#supersedes">supersedes</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="supersedes">
+      <h3>supersedes<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://ontosoft.org/software#supersedes</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#SoftwareVersion" title="http://ontosoft.org/software#SoftwareVersion">Software Version</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#SoftwareVersion" title="http://ontosoft.org/software#SoftwareVersion">Software Version</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#supersededBy" title="http://ontosoft.org/software#supersededBy">superseded by</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -3207,7 +3343,7 @@ This section provides details for each class and property defined by OntoSoft.
          <a href="#CSS" title="http://ontosoft.org/software#CSS">CSS</a>
       </li>
       <li>
-         <a href="#hasCitationLocation2" title="http://ontosoft.org/software#EPL">EPL</a>
+         <a href="#EPL" title="http://ontosoft.org/software#EPL">EPL</a>
       </li>
       <li>
          <a href="#Fortran" title="http://ontosoft.org/software#Fortran">
@@ -3254,12 +3390,12 @@ This section provides details for each class and property defined by OntoSoft.
          <a href="#MsRL" title="http://ontosoft.org/software#MsRL">MsRL</a>
       </li>
       <li>
-         <a href="#Perl" title="http://ontosoft.org/software#Perl">
+         <a href="#hasCitationText0" title="http://ontosoft.org/software#Perl">
             <span>perl</span>
          </a>
       </li>
       <li>
-         <a href="#Python" title="http://ontosoft.org/software#Python">
+         <a href="#hasCitationText8" title="http://ontosoft.org/software#Python">
             <span>python</span>
          </a>
       </li>
@@ -3392,7 +3528,7 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="hasCitationLocation2">
+   <div class="entity" id="EPL">
       <h3>EPL<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
@@ -3592,7 +3728,7 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Perl">
+   <div class="entity" id="hasCitationText0">
       <h3>perl<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
@@ -3608,7 +3744,7 @@ This section provides details for each class and property defined by OntoSoft.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Python">
+   <div class="entity" id="hasCitationText8">
       <h3>python<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
