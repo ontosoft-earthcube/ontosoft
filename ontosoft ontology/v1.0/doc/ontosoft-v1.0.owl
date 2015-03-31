@@ -38,11 +38,12 @@
         <vann:preferredNamespacePrefix>osw</vann:preferredNamespacePrefix>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title xml:lang="en">The Ontosoft ontology</terms:title>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/geosoft-earthcube/ontosoft/master/ontosoft%20categories%20ontology/v1.0/ontosoftCat-v1.0.owl"/>
     </owl:Ontology>
     
 
 
-    <!-- 
+    <!-- http://ontosoft.org/softwareCategories
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
@@ -131,12 +132,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasActiveDevelopment">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Update</category>
         <uiConfig>{position:1}</uiConfig>
-        <category>Contribute</category>
         <dc:description xml:lang="en">How is the software being developed or maintained ?</dc:description>
         <rdfs:range rdf:resource="&software;DevelopmentInformation"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Contribute"/>
     </owl:ObjectProperty>
     
 
@@ -144,10 +144,9 @@
     <!-- http://ontosoft.org/software#hasAdopter -->
 
     <owl:ObjectProperty rdf:about="&software;hasAdopter">
-        <category>Trust</category>
-        <rdfs:comment>Has the software been adopted in a project, organization or by a person?</rdfs:comment>
-        <category>Understand</category>
+        <dc:description>Has the software been adopted in a project, organization or by a person?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
         <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
     
@@ -158,11 +157,10 @@
     <owl:ObjectProperty rdf:about="&software;hasAverageRunTime">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:description xml:lang="en">Do you know how long it takes to run this software on average ?</dc:description>
-        <category>Execute</category>
-        <category>Install</category>
         <uiConfig>{position:5}</uiConfig>
         <rdfs:range rdf:resource="&software;MeasurementEntity"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -171,11 +169,10 @@
 
     <owl:ObjectProperty rdf:about="&software;hasBenchmarkInformation">
         <dc:description xml:lang="en">Is there any benchmark information about the software ?</dc:description>
-        <category>Trust</category>
-        <category>Understand</category>
         <uiConfig>{position:6}</uiConfig>
         <rdfs:range rdf:resource="&software;BenchmarkInformation"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -183,11 +180,10 @@
     <!-- http://ontosoft.org/software#hasCitationLocation -->
 
     <owl:ObjectProperty rdf:about="&software;hasCitationLocation">
-        <category>Cite</category>
-        <category>Do research</category>
         <dc:description xml:lang="en">What is the URL for the citation ?</dc:description>
         <rdfs:domain rdf:resource="&software;Citation"/>
         <rdfs:range rdf:resource="&software;Location"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Cite"/>
     </owl:ObjectProperty>
     
 
@@ -195,11 +191,10 @@
     <!-- http://ontosoft.org/software#hasCitationText -->
 
     <owl:ObjectProperty rdf:about="&software;hasCitationText">
-        <category>Cite</category>
-        <category>Do Research</category>
         <dc:description xml:lang="en">What is the text associated with the Citation ?</dc:description>
         <rdfs:domain rdf:resource="&software;Citation"/>
         <rdfs:range rdf:resource="&software;CitationText"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Cite"/>
     </owl:ObjectProperty>
     
 
@@ -209,12 +204,11 @@
     <owl:ObjectProperty rdf:about="&software;hasCodeLocation">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Execute</category>
         <dc:description xml:lang="en">What is the URL for the code ?</dc:description>
         <uiConfig>{position: 2}</uiConfig>
-        <category>Access</category>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Access"/>
     </owl:ObjectProperty>
     
 
@@ -224,10 +218,9 @@
     <owl:ObjectProperty rdf:about="&software;hasCommitmentOfSupport">
         <uiConfig>{position:2}</uiConfig>
         <dc:description xml:lang="en">How can a user get support for the software ? (eg. Report bugs, request features and extensions, etc)</dc:description>
-        <category>Trust</category>
-        <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -235,11 +228,10 @@
     <!-- http://ontosoft.org/software#hasCompatibleSoftware -->
 
     <owl:ObjectProperty rdf:about="&software;hasCompatibleSoftware">
-        <category>Compose</category>
-        <category>Do Research</category>
         <dc:description xml:lang="en">What software can this software be composed with in a workflow ?</dc:description>
         <rdfs:domain rdf:resource="&software;Composition"/>
         <rdfs:range rdf:resource="&software;SoftwareDescription"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
     </owl:ObjectProperty>
     
 
@@ -250,11 +242,10 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position:3}</uiConfig>
-        <category>Do Research</category>
-        <category>Compose</category>
         <dc:description xml:lang="en">Is this software typically used with other software in a workflow ? (eg: for visualization, preprocessing, postprocessing, etc)</dc:description>
         <rdfs:range rdf:resource="&software;Composition"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
     </owl:ObjectProperty>
     
 
@@ -263,11 +254,10 @@
 
     <owl:ObjectProperty rdf:about="&software;hasCreator">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Understand</category>
         <dc:description xml:lang="en">Who created this software? (Project, Organization, Person, Initiative, etc.)</dc:description>
         <uiConfig>{position:1}</uiConfig>
-        <category>Trust</category>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
         <rdfs:subPropertyOf rdf:resource="&terms;creator"/>
         <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
@@ -278,12 +268,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasDependency">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Execute</category>
-        <category>Install</category>
         <dc:description xml:lang="en">What other software does the software require to be installed ?</dc:description>
         <uiConfig>{position:4}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareVersion"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -292,12 +281,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasDocumentation">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Install</category>
         <dc:description xml:lang="en">Is there any on-line documentation about the software ?</dc:description>
         <uiConfig>{position: 7}</uiConfig>
-        <category>Execute</category>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -307,11 +295,10 @@
     <owl:ObjectProperty rdf:about="&software;hasDomainKeywords">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <dc:description xml:lang="en">Mention any domain specific keywords for this software</dc:description>
-        <category>Understand</category>
-        <category>Relate</category>
         <uiConfig>{position:4}</uiConfig>
         <rdfs:range rdf:resource="&software;Keywords"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Relate"/>
     </owl:ObjectProperty>
     
 
@@ -319,11 +306,10 @@
     <!-- http://ontosoft.org/software#hasEmailContact -->
 
     <owl:ObjectProperty rdf:about="&software;hasEmailContact">
-        <category>Discuss</category>
-        <rdfs:comment>What is the e-mail contact for this software?</rdfs:comment>
-        <category>Get Support</category>
+        <dc:description>What is the e-mail contact for this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Discuss"/>
     </owl:ObjectProperty>
     
 
@@ -331,11 +317,10 @@
     <!-- http://ontosoft.org/software#hasExecutableLocation -->
 
     <owl:ObjectProperty rdf:about="&software;hasExecutableLocation">
-        <category>Execute</category>
-        <category>Access</category>
         <dc:description xml:lang="en">What is the URL for the executable ?</dc:description>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Access"/>
     </owl:ObjectProperty>
     
 
@@ -343,12 +328,11 @@
     <!-- http://ontosoft.org/software#hasFileId -->
 
     <owl:ObjectProperty rdf:about="&software;hasFileId">
-        <category>Do Research</category>
-        <category>Compose</category>
         <dc:description xml:lang="en">What is the id for the File I/O ?
 </dc:description>
         <rdfs:domain rdf:resource="&software;FileIO"/>
         <rdfs:range rdf:resource="&software;Identifier"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
     </owl:ObjectProperty>
     
 
@@ -356,11 +340,10 @@
     <!-- http://ontosoft.org/software#hasFileType -->
 
     <owl:ObjectProperty rdf:about="&software;hasFileType">
-        <category>Compose</category>
-        <category>Do Research</category>
         <dc:description xml:lang="en">What is the File I/O type ?</dc:description>
         <rdfs:domain rdf:resource="&software;FileIO"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
     </owl:ObjectProperty>
     
 
@@ -368,11 +351,10 @@
     <!-- http://ontosoft.org/software#hasFundingSources -->
 
     <owl:ObjectProperty rdf:about="&software;hasFundingSources">
-        <category>Understand</category>
-        <rdfs:comment>Who funded this software?</rdfs:comment>
-        <category>Trust</category>
+        <dc:description>Who funded this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -383,10 +365,9 @@
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <dc:description xml:lang="en">What languages is the program written in ?</dc:description>
         <uiConfig>{position:1}</uiConfig>
-        <category>Install</category>
-        <category>Execute</category>
         <rdfs:range rdf:resource="&software;ProgrammingLanguage"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -395,12 +376,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasInput">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Experiment</category>
         <uiConfig>{position:1}</uiConfig>
-        <category>Do Research</category>
         <dc:description xml:lang="en">What input files does the software require ?</dc:description>
         <rdfs:range rdf:resource="&software;FileIO"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Experiment"/>
     </owl:ObjectProperty>
     
 
@@ -408,10 +388,9 @@
     <!-- http://ontosoft.org/software#hasInputParameter -->
 
     <owl:ObjectProperty rdf:about="&software;hasInputParameter">
-        <category>What are the input parameters used for this software?</category>
-        <category>Do Research</category>
-        <category>Experiment</category>
+        <dc:description>What are the input parameters used for this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Experiment"/>
         <rdfs:range rdf:resource="&terms;Parameter"/>
     </owl:ObjectProperty>
     
@@ -421,12 +400,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasInstallationInstructions">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Install</category>
         <uiConfig>{position:3}</uiConfig>
-        <category>Execute</category>
         <dc:description xml:lang="en">How can one install the software ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -434,11 +412,10 @@
     <!-- http://ontosoft.org/software#hasInteroperableSoftware -->
 
     <owl:ObjectProperty rdf:about="&software;hasInteroperableSoftware">
-        <category>Do Research</category>
-        <category>Compose</category>
-        <rdfs:comment>What other software can interoperate with this one?</rdfs:comment>
+        <dc:description>What other software can interoperate with this one?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareDescription"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
     </owl:ObjectProperty>
     
 
@@ -448,11 +425,10 @@
     <owl:ObjectProperty rdf:about="&software;hasLicense">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position: 3}</uiConfig>
-        <category>Access</category>
-        <category>Execute</category>
         <dc:description xml:lang="en">What license is the code released under ?</dc:description>
         <rdfs:range rdf:resource="&software;License"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Access"/>
         <rdfs:subPropertyOf rdf:resource="&terms;license"/>
     </owl:ObjectProperty>
     
@@ -464,9 +440,8 @@
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position:2}</uiConfig>
         <dc:description xml:lang="en">Are there any major contributors of note for this software ?</dc:description>
-        <category>Trust</category>
-        <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
         <rdfs:subPropertyOf rdf:resource="&terms;contributor"/>
         <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
@@ -479,11 +454,10 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position: 1}</uiConfig>
-        <category>Identify</category>
-        <category>Locate</category>
         <dc:description xml:lang="en">What is the software called ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Locate"/>
     </owl:ObjectProperty>
     
 
@@ -492,12 +466,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasOtherImplementationDetails">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Execute</category>
-        <category>Install</category>
         <dc:description xml:lang="en">Are there any other important details about the implementation of this code (parallelization, special hardware, etc) ?</dc:description>
         <uiConfig>{position:7}</uiConfig>
         <rdfs:range rdf:resource="&software;ImplementationDetails"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -506,12 +479,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasOutput">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Experiment</category>
-        <category>Do Research</category>
         <uiConfig>{position:2}</uiConfig>
         <dc:description xml:lang="en">What output files does the software produce ?</dc:description>
         <rdfs:range rdf:resource="&software;FileIO"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Experiment"/>
     </owl:ObjectProperty>
     
 
@@ -519,12 +491,11 @@
     <!-- http://ontosoft.org/software#hasPersonIdentifier -->
 
     <owl:ObjectProperty rdf:about="&software;hasPersonIdentifier">
-        <category>Understand</category>
-        <category>Trust</category>
         <dc:description xml:lang="en">Provide a Twitter handle, ORCID Id, email address, github URL, home page, or any other unique identifier for this person</dc:description>
         <isRequired>true</isRequired>
         <rdfs:range rdf:resource="&software;Identifier"/>
         <rdfs:domain rdf:resource="&software;Person"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Identify"/>
     </owl:ObjectProperty>
     
 
@@ -535,11 +506,10 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position:1}</uiConfig>
-        <category>Do Research</category>
-        <category>Cite</category>
         <dc:description xml:lang="en">Is there a preferred publication for citing this software ?</dc:description>
         <rdfs:range rdf:resource="&software;Citation"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Cite"/>
     </owl:ObjectProperty>
     
 
@@ -548,12 +518,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasProjectWebsite">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Understand</category>
-        <category>Relate</category>
         <dc:description xml:lang="en">Is there a project website for the software ?</dc:description>
         <uiConfig>{position: 6}</uiConfig>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Relate"/>
     </owl:ObjectProperty>
     
 
@@ -561,10 +530,9 @@
     <!-- http://ontosoft.org/software#hasPublisher -->
 
     <owl:ObjectProperty rdf:about="&software;hasPublisher">
-        <category>Understand</category>
-        <category>Trust</category>
-        <rdfs:comment>Who is the publisher of this software?</rdfs:comment>
+        <dc:description>Who is the publisher of this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
         <rdfs:range rdf:resource="&prov;Agent"/>
     </owl:ObjectProperty>
     
@@ -573,11 +541,10 @@
     <!-- http://ontosoft.org/software#hasRating -->
 
     <owl:ObjectProperty rdf:about="&software;hasRating">
-        <category>What are the ratings for this software?</category>
-        <category>Trust</category>
-        <category>Understand</category>
+        <dc:description>What are the ratings for this software?</dc:description>
         <rdfs:range rdf:resource="&software;Rating"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -586,11 +553,10 @@
 
     <owl:ObjectProperty rdf:about="&software;hasRelevantDataSources">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Experiment</category>
         <dc:description xml:lang="en">Are there any relevant data sources to conduct an experiment with ?</dc:description>
-        <category>Do Research</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Experiment"/>
     </owl:ObjectProperty>
     
 
@@ -599,12 +565,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasSalientQualities">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Trust</category>
-        <category>Understand</category>
         <dc:description xml:lang="en">What other useful features of this software are worth highlighting ?</dc:description>
         <uiConfig>{position:3}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -613,12 +578,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasShortDescription">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Locate</category>
-        <category>Identify</category>
         <dc:description xml:lang="en">Would you like to provide a short description for this software ?</dc:description>
         <uiConfig>{position: 5}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Locate"/>
     </owl:ObjectProperty>
     
 
@@ -627,12 +591,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareCategory">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Execute</category>
         <dc:description xml:lang="en">What categories are associated with the software ?</dc:description>
         <uiConfig>{position: 4}</uiConfig>
-        <category>Access</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareCategory"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Access"/>
     </owl:ObjectProperty>
     
 
@@ -643,10 +606,9 @@
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <dc:description xml:lang="en">Is there any on-line resource for accessing the software community ? (eg. Mailing-list, discussion board, wiki, etc)</dc:description>
         <uiConfig>{position:3}</uiConfig>
-        <category>Update</category>
-        <category>Contribute</category>
         <rdfs:range rdf:resource="&software;CommunityInformation"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Contribute"/>
     </owl:ObjectProperty>
     
 
@@ -654,11 +616,10 @@
     <!-- http://ontosoft.org/software#hasSoftwareSupport -->
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareSupport">
-        <category>Get Support</category>
-        <rdfs:comment>What is the  support for this software?</rdfs:comment>
-        <category>Discuss</category>
+        <dc:description>What is the  support for this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Discuss"/>
     </owl:ObjectProperty>
     
 
@@ -666,11 +627,10 @@
     <!-- http://ontosoft.org/software#hasSoftwareVersion -->
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareVersion">
-        <category>Update</category>
-        <category>Track</category>
         <dc:description xml:lang="en">What versions does the software have ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareVersion"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Track"/>
     </owl:ObjectProperty>
     
 
@@ -679,12 +639,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasTestData">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Execute</category>
         <dc:description xml:lang="en">Do you have any test data for the software ?</dc:description>
         <uiConfig>{position:1}</uiConfig>
-        <category>Run</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TestData"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Run"/>
     </owl:ObjectProperty>
     
 
@@ -694,11 +653,10 @@
     <owl:ObjectProperty rdf:about="&software;hasTestDataDescription">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <uiConfig>{position:2}</uiConfig>
-        <category>Execute</category>
         <dc:description xml:lang="en">Can you describe the test data ?</dc:description>
-        <category>Run</category>
         <rdfs:domain rdf:resource="&software;TestData"/>
         <rdfs:range rdf:resource="&software;TestDataDescription"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Run"/>
     </owl:ObjectProperty>
     
 
@@ -708,12 +666,11 @@
     <owl:ObjectProperty rdf:about="&software;hasTestDataLocation">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Execute</category>
-        <category>Run</category>
         <dc:description xml:lang="en">What is the URL for test data ?</dc:description>
         <uiConfig>{position:1}</uiConfig>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;TestData"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Run"/>
     </owl:ObjectProperty>
     
 
@@ -722,12 +679,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasTestInstructions">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Execute</category>
         <uiConfig>{position:2}</uiConfig>
-        <category>Run</category>
         <dc:description xml:lang="en">Are there any specific instructions for testing the software ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TestInstructions"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Run"/>
     </owl:ObjectProperty>
     
 
@@ -737,10 +693,9 @@
     <owl:ObjectProperty rdf:about="&software;hasUniqueId">
         <dc:description xml:lang="en">What is the DOI or any other unique identifier for this software (or software version) ?</dc:description>
         <uiConfig>{position:1}</uiConfig>
-        <category>Identify</category>
-        <category>Locate</category>
         <rdfs:range rdf:resource="&software;Identifier"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Locate"/>
     </owl:ObjectProperty>
     
 
@@ -750,10 +705,9 @@
     <owl:ObjectProperty rdf:about="&software;hasUsageInformation">
         <dc:description xml:lang="en">Is there any information about uses of this software (paper dois, research labs, etc) ?</dc:description>
         <uiConfig>{position:4}</uiConfig>
-        <category>Trust</category>
-        <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;UsageInformation"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -764,10 +718,9 @@
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <dc:description xml:lang="en">Are there any constraints on use, situations it is not designed for, simplifications ?</dc:description>
         <uiConfig>{position:1}</uiConfig>
-        <category>Understand</category>
-        <category>Relate</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;UseLimitations"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Relate"/>
     </owl:ObjectProperty>
     
 
@@ -776,11 +729,10 @@
 
     <owl:ObjectProperty rdf:about="&software;hasUseStatistics">
         <dc:description xml:lang="en">Is there any information about software use (downloads, frequency of run, etc) ?</dc:description>
-        <category>Understand</category>
-        <category>Trust</category>
         <uiConfig>{position:5}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;UsageStatistics"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
@@ -790,11 +742,10 @@
     <owl:ObjectProperty rdf:about="&software;hasUsesAndAssumptions">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <uiConfig>{position:2}</uiConfig>
-        <category>Relate</category>
-        <category>Understand</category>
         <dc:description xml:lang="en">What are the recommended uses and assumptions for the software ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;UsesAndAssumptions"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Relate"/>
     </owl:ObjectProperty>
     
 
@@ -803,12 +754,11 @@
 
     <owl:ObjectProperty rdf:about="&software;hasVersionId">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Track</category>
         <uiConfig>{position:1}</uiConfig>
-        <category>Update</category>
         <dc:description xml:lang="en">What is the software version id ?</dc:description>
         <rdfs:range rdf:resource="&software;Identifier"/>
         <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Track"/>
     </owl:ObjectProperty>
     
 
@@ -816,12 +766,11 @@
     <!-- http://ontosoft.org/software#hasVersionReleaseDate -->
 
     <owl:ObjectProperty rdf:about="&software;hasVersionReleaseDate">
-        <category>Update</category>
         <uiConfig>{position:2}</uiConfig>
-        <category>Track</category>
         <dc:description xml:lang="en">When was this version released ?</dc:description>
         <rdfs:range rdf:resource="&software;DateEntity"/>
         <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Track"/>
         <rdfs:subPropertyOf rdf:resource="&terms;date"/>
     </owl:ObjectProperty>
     
@@ -831,11 +780,10 @@
 
     <owl:ObjectProperty rdf:about="&software;hasWorkflowDescription">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <category>Do Research</category>
-        <category>Compose</category>
         <dc:description xml:lang="en">Describe the workflow ?</dc:description>
         <rdfs:domain rdf:resource="&software;Composition"/>
         <rdfs:range rdf:resource="&software;WorkflowDescription"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
     </owl:ObjectProperty>
     
 
@@ -846,10 +794,9 @@
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
         <dc:description xml:lang="en">Are there any memory requirements for this software ?</dc:description>
         <uiConfig>{position:6}</uiConfig>
-        <category>Install</category>
-        <category>Execute</category>
         <rdfs:range rdf:resource="&software;MeasurementEntity"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -858,11 +805,10 @@
 
     <owl:ObjectProperty rdf:about="&software;similarSoftware">
         <dc:description xml:lang="en">Is there any other similar software that you know of ?</dc:description>
-        <category>Relate</category>
         <uiConfig>{position:3}</uiConfig>
-        <category>Understand</category>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareDescription"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Relate"/>
     </owl:ObjectProperty>
     
 
@@ -870,12 +816,11 @@
     <!-- http://ontosoft.org/software#supersededBy -->
 
     <owl:ObjectProperty rdf:about="&software;supersededBy">
-        <category>Update</category>
-        <category>Track</category>
-        <category>Which versions replace  the current version?</category>
+        <dc:description>Which versions replace  the current version?</dc:description>
         <rdfs:range rdf:resource="&software;SoftwareVersion"/>
         <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
         <owl:inverseOf rdf:resource="&software;supersedes"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Track"/>
     </owl:ObjectProperty>
     
 
@@ -883,11 +828,10 @@
     <!-- http://ontosoft.org/software#supersedes -->
 
     <owl:ObjectProperty rdf:about="&software;supersedes">
-        <category>Update</category>
-        <category>Track</category>
         <dc:description xml:lang="en">What version does this software version supersede ?</dc:description>
         <rdfs:range rdf:resource="&software;SoftwareVersion"/>
         <rdfs:domain rdf:resource="&software;SoftwareVersion"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Track"/>
     </owl:ObjectProperty>
     
 
@@ -896,12 +840,11 @@
 
     <owl:ObjectProperty rdf:about="&software;supportsOperatingSystem">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <category>Install</category>
-        <category>Execute</category>
         <dc:description xml:lang="en">What Operating Systems can the program run on ?</dc:description>
         <uiConfig>{position:2}</uiConfig>
         <rdfs:range rdf:resource="&software;OperatingSystem"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
     </owl:ObjectProperty>
     
 
@@ -910,10 +853,9 @@
 
     <owl:ObjectProperty rdf:about="&software;usedInPublication">
         <rdfs:comment>In which publication was this software used?</rdfs:comment>
-        <rdfs:comment>Understand</rdfs:comment>
-        <rdfs:comment>Trust</rdfs:comment>
         <rdfs:range rdf:resource="&software;Citation"/>
         <rdfs:domain rdf:resource="&software;Software"/>
+        <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
     </owl:ObjectProperty>
     
 
