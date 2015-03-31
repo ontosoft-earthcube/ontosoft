@@ -38,12 +38,12 @@
         <vann:preferredNamespacePrefix>osw</vann:preferredNamespacePrefix>
         <terms:license>http://creativecommons.org/licenses/by/4.0/</terms:license>
         <terms:title xml:lang="en">The Ontosoft ontology</terms:title>
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/geosoft-earthcube/ontosoft/master/ontosoft%20categories%20ontology/v1.0/ontosoftCat-v1.0.owl"/>
+        <owl:imports rdf:resource="http://ontosoft.org/softwareCategories"/>
     </owl:Ontology>
     
 
 
-    <!-- http://ontosoft.org/softwareCategories
+    <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
     // Annotation properties
