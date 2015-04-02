@@ -1,2 +1,56 @@
 <h2>3. OntoSoft Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<p>This section will be completed soon.</p>
+<p>A detailed description of each of the categories of OntoSoft can be seen below:
+<h3>Identifying Software</h3>
+<p>
+This category captures metadata that allows a user to identify a software entry.  This can be, for example through the name of the software mentioned by a colleague, or through an identifier found in a paper. 
+</p>
+<p>These metadata properties include the name and a short description.  The short description of the software provides important keywords to support search.
+</p>
+<p>Another important property is a unique identifier.  The unique identifier could be a DOI, a permanent URL, or a URI.  Some software may have a unique identifier provided by a software repository (such as the identifiers provided by ASCL).  For these reasons, the property takes a text value.  
+</p>
+<h3>Understanding and Assessing Software</h3>
+<p>
+The metadata in this category allows users to understand what the software does, and to assess its utility for their research.	Several metadata properties have to do with relating the software to knowledge about the domain.  One way to find out details about what the software does in the context of science is to look up the web site for the software or for a related project, which is often associated with a software product.  Other properties provide domain-specific descriptions of the software.  For example, a user may be looking for software that can model water runoff from a catchment, and that makes certain assumptions about boundary conditions unlike other alternative software that may be well known in that field.  OntoSoft includes properties to specify uses and assumptions, use limitations, and similar software that may be widely known in a community. Additional domain-specific metadata properties could be supported as an extension of OntoSoft.  
+<p>
+Another set of metadata properties have to do with trusting the software.  One aspect of this is finding out who its creator and contributors were, as well as who published the software in the registry. This could be a person, a project, or an institution, so the value of these properties is an entity .  Scientists have a name that carries a certain reputation, so the names would allow a user to check on the specific expertise of creators, contributors, and publishers. Another property allows users to specify the funding sources for the software.  We also ask for reassurances on the commitment of support of the software, which could be whether it has a development community, whether the creator has been supporting it for several years, etc.  
+</p>
+<p>
+Another aspect of trust is understanding who is using the software and how they would rate it.  The metadata properties to capture this include adopters (which again can be people, projects, entities), use statistics (extracted from the registry itself or cumulative download statistics that could be automatically extracted from the repository where the software resides), and the publications that use the software. 
+Another property is user ratings, as we envision users to rate software just like they would rate any product, that is, with stars and commentary on whether it delivers on how it is described.
+</p>
+<p>
+Other properties in this category include salient qualities that highlight the merits of the software, and benchmark information that can convey robustness or quality.  </p>
+<h3>Executing the Software</h3>
+<p>
+This category focuses on describing how to execute the software.  This goes beyond instructions to install and run it, and includes how to access the software and how to run it with test data.  </p>
+<p>
+Several properties address the access of the code itself.  They include license information, a location where the code resides (a repository or a local URL), and a location where a self-contained executable could be found.  This is because many scientists do not want to go through the trouble of installing the original source code, and would prefer a pointer to an executable that can be directly run.</p>
+<p>
+Other properties provide execution requirements that allow the installation of the software. These include documentation and installation instructions, the implementation language, the operating system, and average memory requirements.  Another important property is the runtime dependencies, for example libraries that should be installed in the machine where the software is run.  The average runtime is also important, and this would typically not be just a number but an explanation of what to expect the runtime to be depending on the size or characteristics of the data.  We include a property to specify additional implementation details, which are described in free text form.
+</p><p>
+There are also properties that help a user run the software.  These include pointers to test datasets, and instructions to check that the software runs properly and to check that the right results are obtained for the test data.
+</p>
+<h3>Getting Support for the Software</h3>
+<p>This category addresses how users can get support if they have any questions about the appropriate use of the software, have any problems with its installation, or wish to ask about specific cases not described in the documentation.  These metadata properties include an email address to contact and a description of whether and how the software is supported.
+</p>
+<h3>Doing Research with the Software</h3>
+<p>
+This category includes metadata to enable scientists to do research with the software they want to use.  Note that the metadata properties in the second category (understanding the software) are relevant here, but we expect the user is already aware of those since they would be considered before wishing to install and run the software.</p>
+<p>
+Some metadata properties specify the particular input and output requirements of the software.  This includes the types and constraints on the input data and parameters, as well as the expected outputs. Another important metadata property points the user to data sources where other data to run the software can be found.  For example, to run a hydrology model a user might have terrain elevation and vegetation data but may not know where to find rainfall data at the resolution required by the model, and there are national data sources (from NASA, USGS, etc) that provide such information.  This kind of link between software and data sources available to calibrate or run software is crucial to making it reusable, and is often not specified in software repositories because they are more focused on documenting the software itself rather than its use in a research context. </p>
+<p>
+Another set of properties is concerned with running the software in combination with other software, which is a common situation when doing scientific research. For example, there may be a recommended visualization software that is good for showing the results of the k-means software that the user is trying to use, or there may be a data reformatting script that converts data from a standard format into the format that the selected software uses.  This kind of information can be specified in two ways.  One is as a set of pointers to interoperable or related software.  Another way is as a software composition description, which would include a workflow description and a set of software identifiers that are part of that workflow. The workflow description does not need to be formal workflows, they can be provided as a textual/diagrammatic description.
+</p>
+<p>
+A metadata property is included to specify how to cite the software in a scientific publication.</p>
+
+<h3>Updating the Software</h3>
+<p>
+This category includes metadata to find new versions of the software, and to point users to a community or collaborative software development effort to support future extensions of the software.  
+</p>
+<p>
+Some metadata properties are provided to track version of the software.  They include software version and release date, as well as properties to indicate whether there is a newer version and whether there are older versions that are superseded by the software.  In our view, all the metadata needs to be specified for every version of the software in the registry, and it is up to the user to decide what metadata needs to be updated with a new version.  We are currently testing this aspect of the ontology to flesh out how to best manage metadata across software versions.
+</p>
+<p>
+Finally, some metadata properties allow users to find whether the software is being actively developed, and pointers to on-line communities (mailing lists, issue tracking sites, etc) who collaborate to further develop the software. 
+</p>
