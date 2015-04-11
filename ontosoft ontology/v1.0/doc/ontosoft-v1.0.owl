@@ -908,7 +908,7 @@
 
     <owl:DatatypeProperty rdf:about="&software;hasDateValue">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <rdfs:label>has Data Value</rdfs:label>
+        <rdfs:label>has Date Value</rdfs:label>
         <rdfs:domain rdf:resource="&software;DateEntity"/>
         <rdfs:range rdf:resource="&xsd;dateTime"/>
     </owl:DatatypeProperty>
