@@ -26,7 +26,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="http://ontosoft.org/software">
-        <owl:versionInfo rdf:datatype="&xsd;decimal">1.0.1</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="&xsd;string">1.0.1</owl:versionInfo>
         <terms:created rdf:datatype="&xsd;date">2015-03-12</terms:created>
         <rdfs:comment xml:lang="en">Ontosoft is an ontology to describe software</rdfs:comment>
         <terms:description xml:lang="en">Ontosoft is an ontology to describe software.</terms:description>
@@ -34,7 +34,6 @@
         <vann:preferredNamespaceUri>http://ontosoft.org/software#</vann:preferredNamespaceUri>
         <vann:preferredNamespacePrefix>osw</vann:preferredNamespacePrefix>
         <terms:modified>2015-05-01</terms:modified>
-        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/" />
         <owl:imports rdf:resource="http://ontosoft.org/softwareCategories"/>
     </owl:Ontology>
     
@@ -89,11 +88,9 @@
     
 
 
-    <!-- http://purl.org/dc/terms/license -->
+    <!-- http://www.w3.org/2000/01/rdf-schema#description -->
 
-    <rdf:Description rdf:about="&terms;license">
-        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/terms/"/>
-    </rdf:Description>
+    <owl:AnnotationProperty rdf:about="&rdfs;description"/>
     
 
 
@@ -225,8 +222,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasCompositionDescription">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <uiConfig>{position:1}</uiConfig>
         <dc:description xml:lang="en">Is this software typically used with other software in a workflow ? (eg: for visualization, preprocessing, postprocessing, etc)</dc:description>
+        <uiConfig>{position:1}</uiConfig>
         <rdfs:range rdf:resource="&software;Composition"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Compose"/>
@@ -265,9 +262,9 @@
 
     <owl:ObjectProperty rdf:about="&software;hasDocumentation">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:description xml:lang="en">Is there any on-line documentation about the software ?</dc:description>
-        <uiConfig>{position: 1}</uiConfig>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
+        <uiConfig>{position: 1}</uiConfig>
+        <dc:description xml:lang="en">Is there any on-line documentation about the software ?</dc:description>
         <rdfs:range rdf:resource="&software;Location"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
@@ -278,10 +275,10 @@
     <!-- http://ontosoft.org/software#hasDomainKeywords -->
 
     <owl:ObjectProperty rdf:about="&software;hasDomainKeywords">
-        <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:description xml:lang="en">What are the domain specific keywords for this software</dc:description>
+        <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <uiConfig>{position:1}</uiConfig>
+        <dc:description xml:lang="en">What are the domain specific keywords for this software</dc:description>
         <rdfs:range rdf:resource="&software;Keywords"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Relate"/>
@@ -292,8 +289,8 @@
     <!-- http://ontosoft.org/software#hasEmailContact -->
 
     <owl:ObjectProperty rdf:about="&software;hasEmailContact">
-        <dc:description>What is the e-mail contact for this software?</dc:description>
         <uiConfig>{position: 2}</uiConfig>
+        <dc:description>What is the e-mail contact for this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Discuss"/>
@@ -381,8 +378,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasInputParameter">
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
-        <dc:description>What are the input parameters used for this software?</dc:description>
         <uiConfig>{position: 2}</uiConfig>
+        <dc:description>What are the input parameters used for this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Experiment"/>
         <rdfs:range rdf:resource="&terms;Parameter"/>
@@ -407,8 +404,8 @@
     <!-- http://ontosoft.org/software#hasInteroperableSoftware -->
 
     <owl:ObjectProperty rdf:about="&software;hasInteroperableSoftware">
-        <dc:description>What other software can interoperate with this one?</dc:description>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
+        <dc:description>What other software can interoperate with this one?</dc:description>
         <uiConfig>{position: 1}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareDescription"/>
@@ -529,8 +526,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasPublisher">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <uiConfig>{position: 1}</uiConfig>
         <dc:description>Who is the publisher of this software?</dc:description>
+        <uiConfig>{position: 1}</uiConfig>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
         <rdfs:range rdf:resource="&prov;Agent"/>
@@ -554,8 +551,8 @@
     <!-- http://ontosoft.org/software#hasRelevantDataSources -->
 
     <owl:ObjectProperty rdf:about="&software;hasRelevantDataSources">
-        <dc:description xml:lang="en">Are there any relevant data catalogs that can be used with this software ?</dc:description>
         <uiConfig>{position: 1}</uiConfig>
+        <dc:description xml:lang="en">Are there any relevant data catalogs that can be used with this software ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Experiment"/>
@@ -580,9 +577,9 @@
 
     <owl:ObjectProperty rdf:about="&software;hasShortDescription">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <dc:description xml:lang="en">Would you like to provide a short description for this software ?</dc:description>
         <uiConfig>{position: 2}</uiConfig>
-        <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Locate"/>
@@ -619,8 +616,8 @@
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareSupport">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:description>What is the support offered for this software?</dc:description>
         <uiConfig>{position: 1}</uiConfig>
+        <dc:description>What is the support offered for this software?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;TextEntity"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Discuss"/>
@@ -631,8 +628,8 @@
     <!-- http://ontosoft.org/software#hasSoftwareVersion -->
 
     <owl:ObjectProperty rdf:about="&software;hasSoftwareVersion">
-        <dc:description xml:lang="en">What versions does the software have ?</dc:description>
         <isRequired rdf:datatype="&xsd;boolean">true</isRequired>
+        <dc:description xml:lang="en">What versions does the software have ?</dc:description>
         <rdfs:domain rdf:resource="&software;Software"/>
         <rdfs:range rdf:resource="&software;SoftwareVersion"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Track"/>
@@ -802,8 +799,8 @@
 
     <owl:ObjectProperty rdf:about="&software;requiresAverageMemory">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
-        <dc:description xml:lang="en">Are there any memory requirements for this software ?</dc:description>
         <uiConfig>{position:2}</uiConfig>
+        <dc:description xml:lang="en">Are there any memory requirements for this software ?</dc:description>
         <rdfs:range rdf:resource="&software;MeasurementEntity"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Install"/>
@@ -864,8 +861,8 @@
     <!-- http://ontosoft.org/software#usedInPublication -->
 
     <owl:ObjectProperty rdf:about="&software;usedInPublication">
-        <uiConfig>{position: 6}</uiConfig>
         <rdfs:description xml:lang="en">Are there any publications where the software is used ?</rdfs:description>
+        <uiConfig>{position: 6}</uiConfig>
         <rdfs:range rdf:resource="&software;Citation"/>
         <rdfs:domain rdf:resource="&software;Software"/>
         <category rdf:resource="http://ontosoft.org/softwareCategories#Trust"/>
@@ -983,26 +980,6 @@
     
 
 
-    <!-- http://ontosoft.org/software#EnumerationEntity -->
-
-    <owl:Class rdf:about="&software;EnumerationEntity">
-        <rdfs:label xml:lang="en">Enumeration Entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
-        <rdfs:comment xml:lang="en">An entity that provides enumeration instances</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://ontosoft.org/software#ComplexEntity -->
-
-    <owl:Class rdf:about="&software;ComplexEntity">
-        <rdfs:label xml:lang="en">Complex Entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
-        <rdfs:comment xml:lang="en">An entity composed of multiple entities</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- http://ontosoft.org/software#BenchmarkInformation -->
 
     <owl:Class rdf:about="&software;BenchmarkInformation">
@@ -1043,6 +1020,16 @@
     
 
 
+    <!-- http://ontosoft.org/software#ComplexEntity -->
+
+    <owl:Class rdf:about="&software;ComplexEntity">
+        <rdfs:label xml:lang="en">Complex Entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">An entity composed of multiple entities</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://ontosoft.org/software#Composition -->
 
     <owl:Class rdf:about="&software;Composition">
@@ -1069,6 +1056,16 @@
         <rdfs:label xml:lang="en">Development Information</rdfs:label>
         <rdfs:subClassOf rdf:resource="&software;TextEntity"/>
         <rdfs:comment xml:lang="en">Software development/maintenance description</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://ontosoft.org/software#EnumerationEntity -->
+
+    <owl:Class rdf:about="&software;EnumerationEntity">
+        <rdfs:label xml:lang="en">Enumeration Entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">An entity that provides enumeration instances</rdfs:comment>
     </owl:Class>
     
 
@@ -1336,8 +1333,8 @@
     <!-- http://www.w3.org/ns/prov#Agent -->
 
     <owl:Class rdf:about="&prov;Agent">
-        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
         <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
     </owl:Class>
     
 
@@ -1361,6 +1358,12 @@
     
 
 
+    <!-- http://creativecommons.org/licenses/by/4.0/ -->
+
+    <owl:NamedIndividual rdf:about="http://creativecommons.org/licenses/by/4.0/"/>
+    
+
+
     <!-- http://delicias.dia.fi.upm.es/members/DGarijo#me -->
 
     <owl:NamedIndividual rdf:about="http://delicias.dia.fi.upm.es/members/DGarijo#me"/>
@@ -1370,6 +1373,7 @@
     <!-- http://ontosoft.org/software -->
 
     <owl:NamedIndividual rdf:about="http://ontosoft.org/software">
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <terms:contributor rdf:resource="http://delicias.dia.fi.upm.es/members/DGarijo#me"/>
         <terms:creator rdf:resource="http://www.isi.edu/~gil/"/>
         <terms:creator rdf:resource="http://www.isi.edu/~varunr/"/>
